@@ -100,7 +100,7 @@ impl<'a> ScalarRef<'a> for ListRef<'a> {
     }
 }
 
-impl<'a> ListRef<'a> {
+impl ListRef<'_> {
     /// Get length of [`List`]
     pub fn len(&self) -> usize {
         self.offset.1 - self.offset.0

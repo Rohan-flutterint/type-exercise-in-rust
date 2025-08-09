@@ -2,8 +2,6 @@
 
 //! Implements `Arrayiterator`
 
-use std::iter::TrustedLen;
-
 use super::Array;
 
 /// An iterator that iterators on any [`Array`] type.
@@ -40,10 +38,11 @@ impl<'a, A: Array> ArrayIterator<'a, A> {
     }
 }
 
-impl<'a, A: Array> ExactSizeIterator for ArrayIterator<'a, A> {
+impl<A: Array> ExactSizeIterator for ArrayIterator<'_, A> {
     fn len(&self) -> usize {
         self.array.len() - self.pos
     }
 }
 
-unsafe impl<'a, A: Array> TrustedLen for ArrayIterator<'a, A> {}
+// nightly-only feature
+// unsafe impl<'a, A: Array> TrustedLen for ArrayIterator<'a, A> {}

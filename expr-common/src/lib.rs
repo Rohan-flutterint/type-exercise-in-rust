@@ -7,10 +7,6 @@
 //! systems in the Rust programming language. We leverage the Rust type system to **minimize**
 //! runtime cost and make our development process easier with **safe**, **nightly** Rust.
 
-#![feature(generic_associated_types)]
-#![feature(trace_macros)]
-#![feature(trusted_len)]
-
 pub mod array;
 pub mod datatype;
 pub mod expr;

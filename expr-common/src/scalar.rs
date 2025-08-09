@@ -97,7 +97,7 @@ pub enum ScalarRefImpl<'a> {
     List(ListRef<'a>),
 }
 
-impl<'a> PartialEq for ScalarRefImpl<'a> {
+impl PartialEq for ScalarRefImpl<'_> {
     fn eq(&self, other: &Self) -> bool {
         use ScalarRefImpl::*;
         match (self, other) {

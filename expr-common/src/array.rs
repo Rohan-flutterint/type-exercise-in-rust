@@ -182,14 +182,14 @@ mod tests {
 
     #[test]
     fn test_build_int32_array() {
-        let data = vec![Some(1), Some(2), Some(3), None, Some(5)];
+        let data = [Some(1), Some(2), Some(3), None, Some(5)];
         let array = build_array_from_vec::<I32Array>(&data[..]);
         check_array_eq(&array, &data[..]);
     }
 
     #[test]
     fn test_build_string_array() {
-        let data = vec![Some("1"), Some("2"), Some("3"), None, Some("5"), Some("")];
+        let data = [Some("1"), Some("2"), Some("3"), None, Some("5"), Some("")];
         let array = build_array_from_vec::<StringArray>(&data[..]);
         check_array_eq(&array, &data[..]);
     }
